@@ -66,7 +66,7 @@ Dans l'interface de jupyter, créez un nouveau fichier notebook (*.ipynb) locali
 Dans la première cellule copiez le code suivant:
 
 ```python
-%matplotlib inline
+%matplotlib inline --> toute commande qui finit par matplotlib est un fichier, dc ca fait une erreur, mais ca marche quand meme
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import norm
@@ -165,35 +165,45 @@ df = pandas.read_csv()
 
 Quel est le type de l'objet `df`?
 ```
-
+C'est une dataframe
 ```
 
 ##### Descriptions d'une table de données
 Que permettent les méthodes suivantes?
 ###### df.shape
 ```
+Donne les dimensions de la dataframe
 ```
 ###### df.head()
 ```
+Donne les permieres lignes
 ```
 ###### df.tail()
 ```
+Donne les dernieres lignes
 ```
 ###### df.columns
 ```
+Donne les noms des colonnes
 ```
 ###### df.dtypes
 ```
+Donne les types des colonnes
 ```
 ###### df.info
 ```
+affiche la dataframe
 ```
 ###### df.describe()
 ```
+Affiche sous forme de tableur
 ```
 ###### df.dropna()
 ```
+
 ```
+
+Lorsqu'on utilise pandas, on veut connaitre les types des colonnes. donc, 
 
 ##### Accès aux éléments d'une table de données
 
@@ -202,6 +212,9 @@ values = df[['Description', 'Gene Symbol']]
 ```
 
 Quel est le type de `values` ?
+```
+Dataframe
+```
 
 Verifiez si certaines méthodes de `DataFrame` lui sont applicables.
 Ce type supporte l'accès par indice et les slice `[a:b]`
@@ -388,9 +401,9 @@ Completer le tableau ci-dessous avec les quantités vous semblant adéquates pou
 
 | Symboles | Paramètres | Quantités Biologiques |
 | --- | --- | --- |
-| k | nombre de succès observés| |
-| K | nombre de succès possibles| |
-| n | nombre d'observations| |
+| k | nombre de succès observés| nombre de proteines ayant le GO|
+| K | nombre de succès possibles| nombre total dans le proteome, ayant le terme GO|
+| n | nombre d'observations| nombre de proteine recupérées |
 | N | nombre d'elements observables| |
 
 #### 4. Calcul de l'enrichissement en fonction biologiques
